@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-@&(9w_dt)78vgbgbqpb(akt6^i)j4c9d#6sj9s(5ww%92zrg#$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['app-mckennacontainer-20.devedu.io', 'localhost', '127.0.0.1', '[::1]']
+
 
 
 # Application definition
