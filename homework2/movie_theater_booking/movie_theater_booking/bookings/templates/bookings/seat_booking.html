@@ -1,20 +1,19 @@
 {% extends 'bookings/base.html' %}
+
 {% block title %}Seat Booking{% endblock %}
 
 {% block content %}
-<h1>Book Seats for {{ movie.title }}</h1>
+<h2>Book Seats for {{ movie.title }}</h2>
 
-<form method="post" action="">
+<form method="post" class="mb-3">
   {% csrf_token %}
   <div class="mb-3">
-    <label for="seat" class="form-label">Select Seat</label>
+    <label for="seat" class="form-label">Available Seats</label>
     <select name="seat" id="seat" class="form-select" required>
       {% for seat in seats %}
-        {% if seat.booking_status %}
-          <option value="{{ seat.id }}" disabled>Seat {{ seat.seat_number }} (Booked)</option>
-        {% else %}
-          <option value="{{ seat.id }}">Seat {{ seat.seat_number }}</option>
-        {% endif %}
+        <option value="{{ seat.id }}" {% if seat.booking_status %}disabled{% endif %}>
+          Seat {{ seat.seat_number }} {% if seat.booking_status %}(Booked){% endif %}
+        </option>
       {% endfor %}
     </select>
   </div>
@@ -22,6 +21,6 @@
 </form>
 
 {% if message %}
-<div class="alert alert-info mt-3">{{ message }}</div>
+<div class="alert alert-info">{{ message }}</div>
 {% endif %}
 {% endblock %}
