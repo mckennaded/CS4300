@@ -1,24 +1,26 @@
-from rest_framework import viewsets, permissions
-from .models import Movie, Seat, Booking
-from .serializers import MovieSerializer, SeatSerializer, BookingSerializer
+import json
+import os
+from django.shortcuts import render
 
-class MovieViewSet(viewsets.ModelViewSet):
-    queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
-    permission_classes = [permissions.IsAdminUser]  # Only admin users can modify movies
+def movie_list(request):
+    file_path = os.path.join(os.path.dirname(__file__), 'movies.json')
+    with open(file_path, 'r') as f:
+        movies = json.load(f)
+    return render(request, 'bookings/movie_list.html', {'movies': movies})
 
-class SeatViewSet(viewsets.ModelViewSet):
-    queryset = Seat.objects.all()
-    serializer_class = SeatSerializer
-    permission_classes = [permissions.IsAuthenticated]  # Auth users can view and book seats
+def seat_booking(request, movie_id):
+    # Logic to display seats for movie_id, read from JSON or in-memory data
+    seats = [
+        {"seat_number": "A1", "is_booked": False},
+        {"seat_number": "A2", "is_booked": True},
+        {"seat_number": "A3", "is_booked": False},
+    ]
+    return render(request, 'bookings/seat_booking.html', {'movie_id': movie_id, 'seats': seats})
 
-class BookingViewSet(viewsets.ModelViewSet):
-    serializer_class = BookingSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        # Return bookings only for the logged-in user
-        return Booking.objects.filter(user=self.request.user)
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+def booking_history(request):
+    # Logic to fetch booking history from file/session/database as suits your setup
+    bookings = [
+        {"movie_title": "Luca", "seat": "A1", "booking_date": "2025-10-01"},
+        {"movie_title": "Encanto", "seat": "B3", "booking_date": "2025-10-05"},
+    ]
+    return render(request, 'bookings/booking_history.html', {'bookings': bookings})

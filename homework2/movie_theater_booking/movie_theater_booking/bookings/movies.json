@@ -1,0 +1,63 @@
+[
+    {
+      "title": "Spider-Man: No Way Home",
+      "description": "Peter Parker seeks help after his identity is revealed, leading to multiverse chaos.",
+      "release_date": "2021-12-17",
+      "duration": 148
+    },
+    {
+      "title": "Black Panther: Wakanda Forever",
+      "description": "The people of Wakanda fight to protect their home after the loss of their king.",
+      "release_date": "2022-11-11",
+      "duration": 161
+    },
+    {
+      "title": "Doctor Strange in the Multiverse of Madness",
+      "description": "Doctor Strange battles threats across the multiverse with help from new and old friends.",
+      "release_date": "2022-05-06",
+      "duration": 126
+    },
+    {
+      "title": "Jurassic World: Dominion",
+      "description": "Humans and dinosaurs try to coexist after the fallout of a global dinosaur escape.",
+      "release_date": "2022-06-10",
+      "duration": 146
+    },
+    {
+      "title": "The Batman",
+      "description": "Batman fights crime and uncovers corruption in Gotham City.",
+      "release_date": "2022-03-04",
+      "duration": 176
+    },
+    {
+      "title": "Thor: Love and Thunder",
+      "description": "Thor embarks on a new adventure accompanied by new and old allies to combat a powerful threat.",
+      "release_date": "2022-07-08",
+      "duration": 119
+    },
+    {
+      "title": "Top Gun: Maverick",
+      "description": "Captain Pete 'Maverick' Mitchell teaches a new generation of pilots at the Top Gun school.",
+      "release_date": "2022-05-27",
+      "duration": 131
+    },
+    {
+      "title": "Dune",
+      "description": "Paul Atreides leads his family and people in a fight over a desert planet’s precious resource.",
+      "release_date": "2021-10-22",
+      "duration": 155
+    },
+    {
+      "title": "No Time to Die",
+      "description": "James Bond comes out of retirement to face a new threat.",
+      "release_date": "2021-10-08",
+      "duration": 163
+    },
+    {
+      "title": "The Matrix Resurrections",
+      "description": "Neo returns to the Matrix to uncover new truths and fight against the system.",
+      "release_date": "2021-12-22",
+      "duration": 148
+    }
+  ]
+  
