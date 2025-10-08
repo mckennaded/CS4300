@@ -2,31 +2,7 @@
   {
     "movie_id": 1,
     "seat": "A1",
-    "user": "Guest",
-    "booking_date": "2025-10-07"
-  },
-  {
-    "movie_id": 1,
-    "seat": "A3",
-    "user": "Guest",
-    "booking_date": "2025-10-07"
-  },
-  {
-    "movie_id": 1,
-    "seat": "A2",
-    "user": "Guest",
-    "booking_date": "2025-10-07"
-  },
-  {
-    "movie_id": 1,
-    "seat": "B1",
-    "user": "Guest",
-    "booking_date": "2025-10-07"
-  },
-  {
-    "movie_id": 5,
-    "seat": "C2",
-    "user": "Guest",
+    "user": "testuser",
     "booking_date": "2025-10-07"
   }
 ]
