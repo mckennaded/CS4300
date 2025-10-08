@@ -1,0 +1,38 @@
+[
+  {
+    "seat_number": "A1",
+    "is_booked": true
+  },
+  {
+    "seat_number": "A2",
+    "is_booked": true
+  },
+  {
+    "seat_number": "A3",
+    "is_booked": true
+  },
+  {
+    "seat_number": "B1",
+    "is_booked": true
+  },
+  {
+    "seat_number": "B2",
+    "is_booked": false
+  },
+  {
+    "seat_number": "B3",
+    "is_booked": false
+  },
+  {
+    "seat_number": "C1",
+    "is_booked": false
+  },
+  {
+    "seat_number": "C2",
+    "is_booked": true
+  },
+  {
+    "seat_number": "C3",
+    "is_booked": false
+  }
+]
