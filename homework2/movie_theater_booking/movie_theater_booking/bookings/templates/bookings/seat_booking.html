@@ -1,26 +1,53 @@
-{% extends 'bookings/base.html' %}
-
-{% block title %}Seat Booking{% endblock %}
-
-{% block content %}
-<h2>Book Seats for {{ movie.title }}</h2>
-
-<form method="post" class="mb-3">
-  {% csrf_token %}
-  <div class="mb-3">
-    <label for="seat" class="form-label">Available Seats</label>
-    <select name="seat" id="seat" class="form-select" required>
-      {% for seat in seats %}
-        <option value="{{ seat.id }}" {% if seat.booking_status %}disabled{% endif %}>
-          Seat {{ seat.seat_number }} {% if seat.booking_status %}(Booked){% endif %}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-  <button type="submit" class="btn btn-success">Book Seat</button>
-</form>
-
-{% if message %}
-<div class="alert alert-info">{{ message }}</div>
-{% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Seat Booking - Movie {{ movie_id }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #ecedef;
+        }
+        .seat-label {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            margin: 5px;
+            font-weight: bold;
+            vertical-align: middle;
+            user-select: none;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+        label.btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Seat Booking for Movie ID {{ movie_id }}</h1>
+        <form method="post" class="d-flex flex-wrap">
+            {% csrf_token %}
+            {% for seat in seats %}
+            <input type="radio" class="btn-check" name="seat" id="seat{{ seat.seat_number }}" value="{{ seat.seat_number }}" autocomplete="off" {% if seat.is_booked %}disabled{% endif %}>
+            <label class="btn btn-outline-primary seat-label {% if seat.is_booked %}btn-danger disabled{% endif %}" for="seat{{ seat.seat_number }}">
+                {{ seat.seat_number }}
+            </label>
+            {% endfor %}
+            <div class="w-100 mt-3">
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+                <button type="submit" class="btn btn-success">Book Selected Seat</button>
+                <a href="{% url 'movie_list' %}" class="btn btn-secondary ms-3">Back to Movies</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

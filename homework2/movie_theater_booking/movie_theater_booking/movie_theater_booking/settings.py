@@ -101,6 +101,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://app-mckennacontainer-20.devedu.io",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
