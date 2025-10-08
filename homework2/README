@@ -1,0 +1,62 @@
+====================================
+Movie Theater Booking Application
+====================================
+
+Overview:
+----------
+The purpose of this project is to build a Movie Theater Booking Application using Python and Django. This application
+allows users to view movie listings, books seats, and check their booking history.
+
+
+Features Implemented:
+---------------------
+- Movie Listings:
+  * Movies data is read from movies.json, each movie has a title, description, release date, and duration.
+  * Each movie has a "Book Seats" button linking to that movie's seat booking page.
+
+- Seat Booking:
+  * Seat availability is stored in seats.json as a dictionary mapping movie IDs to lists of seat statuses.
+  * Users can select only available seats; already booked seats are disabled.
+  * Booking status updates are saved in both seats.json and bookings.json.
+  * Bookings are tracked per movie to prevent booking conflicts.
+
+- Booking History:
+  * Displays the current user's booking history with movie titles and selected seat numbers.
+  * Movie titles are mapped from movie IDs for clear display.
+
+JSON Files:
+-------------
+- movies.json: stores movie details.
+- seats.json: stores seat availability by movie (keyed by movie ID).
+- bookings.json: stores user booking records, including user identifier, movie ID, seat, and booking date.
+
+
+Setup Instructions
+------------------
+
+1. After cloning and starting up virtual environment, edit settings.py to configure the deployment domain:
+    ALLOWED HOSTS = [app-yourdeploymentdomain.io]
+   CSRF_TRUSTED_ORIGINS = ["https://app-yourdeploymentdomain.io"]
+2. Run the Django development server:
+   python manage.py runserver
+3. Access the app in a web browser at http://yourdeploymentdomain.io/ 
+
+Testing:
+--------
+- Unit tests are located in bookings/tests.py.
+- Tests cover movie listing, seat booking, booking history, and booking conflict prevention.
+- Run tests using:
+   python manage.py test bookings
+- Tests operate on per-movie seat booking data and use mock movies.
+
+Challenges:
+------------
+- I was unable to implement Render to deploy. I tried various ways but Render was unable to access my requirements.txt
+- I had issues with the JSON files, the movies would disappear after running the application on my local host
+- I with I had structured my project differently, the multiple movie_theater_booking makes it harder to navigate
+
+AI USE:
+-------
+I used perplexity to help develop the unit tests for this project. I also used it to create the JSON files
+containing movies and seat numbers. I tried to have perplexity help with deploying on Render but it was
+not helpful. 

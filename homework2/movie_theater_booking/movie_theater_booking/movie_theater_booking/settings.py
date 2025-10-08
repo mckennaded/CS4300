@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@&(9w_dt)78vgbgbqpb(akt6^i)j4c9d#6sj9s(5ww%92zrg#$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['app-mckennacontainer-20.devedu.io.onrender.com',
+ALLOWED_HOSTS = ['app-mckennacontainer-20.devedu.io',
 ]
 
 
@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://app-mckennacontainer-20.devedu.io.onrender.com",
+    "https://app-mckennacontainer-20.devedu.io",
 ]
 
 # Internationalization
